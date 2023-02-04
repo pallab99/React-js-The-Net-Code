@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 const Home = () => {
   const [name, setName] = useState("Pallab");
   const [age,setAge]=useState(20);
