@@ -57,3 +57,9 @@
   color: #f1356d;
   margin-bottom: 8px;
 }
+.loading{
+  font-size: 50px;
+  font-weight: 400;
+  justify-content: center;
+  align-items: center;
+}

@@ -4,16 +4,21 @@ import BlogList from "./BlogList";
 const Home = () => {
   const [blogs, setBlogs] = useState(null);
   // const [name, setName] = useState("mario");
+  const [ispending, setIsPending] = useState(true);
 
   const getData = () => {
-    fetch("http://localhost:8000/blogs")
-      .then((res) => {
-        return res.json();
-      })
+    
+    setTimeout(() => {
+      fetch("http://localhost:8000/blogs")
+        .then((res) => {
+          return res.json();
+        })
 
-      .then((data) => {
-        setBlogs(data);
-      });
+        .then((data) => {
+          setBlogs(data);
+          setIsPending(false);
+        });
+    }, 1000);
   };
 
   useEffect(() => {
@@ -22,6 +27,7 @@ const Home = () => {
 
   return (
     <div className="Home">
+      {ispending && <div className="loading">Loading....</div>}
       {blogs && <BlogList blogs={blogs} title="All Blogs!" />}
 
       {/* <button
