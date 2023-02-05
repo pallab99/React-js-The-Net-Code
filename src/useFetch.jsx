@@ -9,7 +9,7 @@ const useFetch = (url) => {
   useEffect(() => {
     setTimeout(() => {
       axios({
-        url: url,
+        url: url
       })
         .then((response) => {
           setData(response.data);
